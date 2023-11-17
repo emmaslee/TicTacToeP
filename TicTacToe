@@ -59,10 +59,12 @@ public class Main{
 }
      private static void display(char[][] board) {
        System.out.println("Round: " + round);
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (j == board[i].length - 1) System.out.print(board[i][j]);
-                 else { System.out.print( board[i][j] + " [] ");
+        int row = Integer.parseInt(ans.substring(3));
+        int column = Integer.parseInt(ans.substring(0,1));
+        for (int row = 0; row < board.length; row++) {
+            for (int column = 0; column < board[row].length; j++) {
+                if (column == board[row].length - 1) System.out.print(board[row][column]);
+                 else { System.out.print( board[row][column] + " [] ");
             }
             System.out.println();
         }
