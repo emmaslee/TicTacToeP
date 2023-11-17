@@ -22,7 +22,7 @@ public class Main{
         display(board);
         while(!win(board) == true){
 
-            //players answer for row/column
+            //players answer for th row/column
             System.out.println("Choose a row and column (0, 1, or 2); for player " + player + ":");
             row = in.nextInt();
             column = in.nextInt();
