@@ -7,12 +7,11 @@ import java.util.Scanner;
  */
 public class Main{
     public static void main(String[] args) {
+   char[][] board = new char[3][3];
         Scanner in = new Scanner(System.in);
         int row, column;
         char player = 'X';
         int round =1;
-        char[][] board = new char[3][3];
-        char ch = '1';
         for (int i = 0; i < 3; i++){
             System.out.printlm();
             for (int j = 0; j < 3; j++) {
@@ -27,10 +26,6 @@ public class Main{
             row = in.nextInt();
             column = in.nextInt();
 
-            //unavailable spot - it is already used
-            while (board[row][column] == 'X' || board[row][column] == 'O') {
-                System.out.println("This spot is unavailable. Choose new spot");
-            }
             //place X mark
             board[row][column] = player;
             display(board);
@@ -53,22 +48,16 @@ public class Main{
             round++;
 
         }
+  
+            while (board[row][column] == 'X' || board[row][column] == 'O') {
+                System.out.println("This spot is unavailable. Choose new spot");
+            }
 
     }
     
 }
-     private static void display(char[][] board) {
-       System.out.println("Round: " + round);
-        int row = Integer.parseInt(ans.substring(3));
-        int column = Integer.parseInt(ans.substring(0,1));
-        for (int row = 0; row < board.length; row++) {
-            for (int column = 0; column < board[row].length; j++) {
-                if (column == board[row].length - 1) System.out.print(board[row][column]);
-                 else { System.out.print( board[row][column] + " [] ");
-            }
-            System.out.println();
-        }
-    }
+    
+    
     
     public static Boolean win(char[][] board){
         for (int i = 0; i< board.length; i++) {
@@ -93,6 +82,18 @@ public class Main{
         return false;
     } 
     return true;
+}
+ private static void display(char[][] board) {
+       System.out.println("Round: " + round);
+        int row = Integer.parseInt(ans.substring(3));
+        int column = Integer.parseInt(ans.substring(0,1));
+        for (int row = 0; row < board.length; row++) {
+            for (int column = 0; column < board[row].length; j++) {
+                if (column == board[row].length - 1) System.out.print(board[row][column]);
+                 else { System.out.print( board[row][column] + " [] ");
+            }
+            System.out.println();
+        }
 }
 }
 
