@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
    char[][] board = new char[3][3];
-        Scanner in = new Scanner(System.in);
         int row, column;
         char player = 'X';
         int round =1;
@@ -18,6 +17,7 @@ public class Main{
                 System.out.println("[]");
             }
         }
+       Scanner in = new Scanner(System.in);
         display(board);
         while(!win(board) == true){
 
